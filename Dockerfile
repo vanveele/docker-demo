@@ -1,10 +1,4 @@
-FROM python:2.7-alpine
+FROM vanveele/flask:latest
 LABEL maintainer robert.vanveelen@gmail.com
-COPY requirements.txt /app/requirements.txt
-RUN pip install -r /app/requirements.txt
-COPY . /app
-WORKDIR /app
-EXPOSE 5000
-ENTRYPOINT ["python"]
-CMD ["application.py"]
-
+ENV refreshed_on 2018-01-31
+ENV VERSION 0.1
