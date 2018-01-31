@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    ver = os.env.get('VERSION', 'undef')
+    ver = os.getenv('VERSION', 'undef')
     return "Hello World! Version: {}".format(ver)
 
 if __name__ == "__main__":
