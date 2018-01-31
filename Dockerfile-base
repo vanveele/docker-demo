@@ -1,11 +1,11 @@
 FROM python:2.7-alpine
 LABEL maintainer robert.vanveelen@gmail.com
+EXPOSE 5000
+ENTRYPOINT ["python"]
+CMD ["application.py"]
 ENV refreshed_on 2018-01-31
 ONBUILD ADD requirements.txt /app/requirements.txt
 ONBUILD RUN pip install -r /app/requirements.txt
 ONBUILD COPY . /app
 WORKDIR /app
-EXPOSE 5000
-ENTRYPOINT ["python"]
-CMD ["application.py"]
 
